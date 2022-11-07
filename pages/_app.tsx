@@ -1,6 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
+import type { AppProps } from "next/app";
+import "../styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+// This is the chainId your dApp will work on.
+const activeChainId = ChainId.Mumbai;
+
+function MyApp({ Component, pageProps }) {
+	return (
+		<ThirdwebProvider desiredChainId={activeChainId}>
+			<Component {...pageProps} />
+		</ThirdwebProvider>
+	);
 }
+
+export default MyApp;
