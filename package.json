@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "@thirdweb-dev/react": "^3.5.1",
     "@thirdweb-dev/sdk": "^3.5.1",
     "@types/node": "18.11.9",
@@ -20,7 +21,6 @@
     "next": "13.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.6.0",
     "typescript": "4.8.4"
   }
 }

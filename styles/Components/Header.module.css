@@ -1,0 +1,39 @@
+.outerDiv {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.wallet {
+	padding: 0.5rem;
+	/* border: 0.5px solid white; */
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: silver;
+	color: black;
+}
+
+.menu a {
+	margin: 0 0.8rem;
+	vertical-align: middle;
+}
+
+.icon {
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 0 0.8rem;
+}
+
+.search {
+	vertical-align: middle;
+	width: 50%;
+}
+
+.search input {
+	background-color: silver;
+	box-sizing: border-box;
+	border: none;
+	width: 100%;
+	border-radius: 5px;
+	padding: 0.5rem;
+}
