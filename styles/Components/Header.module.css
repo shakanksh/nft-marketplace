@@ -5,23 +5,39 @@
 }
 
 .wallet {
-	padding: 0.5rem;
-	/* border: 0.5px solid white; */
+	padding: 1rem 0.5rem;
+	font-weight: 600;
+	border: none;
 	cursor: pointer;
 	border-radius: 5px;
-	background-color: silver;
+	background-color: var(--lime);
 	color: black;
+	transition: scale 0.1s ease-in-out;
+}
+
+.wallet:hover {
+	scale: 1.05;
 }
 
 .menu a {
 	margin: 0 0.8rem;
 	vertical-align: middle;
+	color: var(--lime);
+	font-weight: bold;
+	padding: 0 10px;
+	transition: all 0.2s ease-in-out;
+}
+
+.menu a:hover {
+	text-shadow: 2px 2px 10px var(--lime);
+	filter: dropshadow(color=var(--lime), offx=2, offy=2);
 }
 
 .icon {
 	vertical-align: middle;
 	cursor: pointer;
 	padding: 0 0.8rem;
+	color: var(--gray);
 }
 
 .search {
@@ -30,10 +46,19 @@
 }
 
 .search input {
-	background-color: silver;
+	/* background-color: var(--space); */
+	background-color: #3e4365;
+	color: var(--lime);
 	box-sizing: border-box;
 	border: none;
 	width: 100%;
-	border-radius: 5px;
-	padding: 0.5rem;
+	border-radius: 20px;
+	padding: 0.8rem 0.5rem;
+	font-weight: 600;
+}
+
+.search input:focus {
+	outline: none;
+	border: 2.5px solid var(--lime);
+	background-color: var(--space);
 }

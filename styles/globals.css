@@ -1,11 +1,18 @@
+:root {
+	--gray: #d4d2d5; /* black */
+	--space: #25283d; /* white */
+	--lime: #c3f73a; /* black */
+	--pink: #d12335; /* white or black (maybe?) */
+}
+
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	color: white;
-	background: black;
+	letter-spacing: 0.5px;
+	font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	background: var(--space);
 }
 
 a {
