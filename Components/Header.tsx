@@ -28,8 +28,8 @@ function Header({}: Props) {
 					<input type='text' placeholder='Search' />
 				</div>
 				<div className={styles.menu}>
-					<a href='#'>Create NFT</a>
-					<a href='#'>List Item</a>
+					<a href='/create'>Create NFT</a>
+					<a href='/list'>List Item</a>
 					<IconContext.Provider
 						value={{ size: "1.5em", className: styles.icon }}>
 						<AiOutlineBell />
