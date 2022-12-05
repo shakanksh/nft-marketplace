@@ -15,7 +15,7 @@ import Router from "next/router";
 
 type Props = {};
 
-function list({}: Props) {
+function List({}: Props) {
 	const address = useAddress();
 
 	const { contract } = useContract(
@@ -53,4 +53,4 @@ function list({}: Props) {
 	);
 }
 
-export default list;
+export default List;

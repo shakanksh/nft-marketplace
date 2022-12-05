@@ -6,7 +6,7 @@ import Router from "next/router";
 
 type Props = {};
 
-function create({}: Props) {
+function Create({}: Props) {
 	const address = useAddress();
 
 	const [preview, setPreview] = React.useState<string>();
@@ -91,4 +91,4 @@ function create({}: Props) {
 	);
 }
 
-export default create;
+export default Create;
