@@ -123,3 +123,21 @@
 	font-size: large;
 	font-weight: 700;
 }
+
+.selected {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 2px solid var(--space);
+	align-items: center;
+	cursor: pointer;
+	padding: 1rem 1rem;
+	border-radius: 5px;
+	color: var(--space);
+	background-color: var(--lime);
+	user-select: none;
+}
+
+.selected h2 {
+	color: var(--space);
+}
