@@ -56,8 +56,9 @@ function List({}: Props) {
 		error: error,
 	} = useCreateAuctionListing(contract);
 
-	const handleCreateListing = async (e: React.FormEvent<HTMLFormElement>) => {
+	const handleListing = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+
 		if (networkMismatch) {
 			switchNetwork && switchNetwork(ChainId.Mumbai);
 			return;
@@ -97,12 +98,12 @@ function List({}: Props) {
 			createAuctionListing(
 				{
 					assetContractAddress: process.env.NEXT_PUBLIC_COLLECTION_CONTRACT!,
+					buyoutPricePerToken: price.value,
 					tokenId: selectedNFT.metadata.id,
+					startTimestamp: new Date(),
 					currencyContractAddress: NATIVE_TOKEN_ADDRESS,
 					listingDurationInSeconds: 60 * 60 * 24 * 7, //1 week
-					buyoutPricePerToken: price.value,
 					quantity: 1,
-					startTimestamp: new Date(),
 					reservePricePerToken: 0,
 				},
 				{
@@ -156,7 +157,7 @@ function List({}: Props) {
 				</div>
 
 				{selectedNFT && (
-					<form onSubmit={(e) => handleCreateListing}>
+					<form onSubmit={handleListing}>
 						<div>
 							<div>
 								<label>Direct Listing</label>
