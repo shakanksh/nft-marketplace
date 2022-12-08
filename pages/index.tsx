@@ -7,7 +7,7 @@ import {
 	MediaRenderer,
 } from "@thirdweb-dev/react";
 import { ListingType } from "@thirdweb-dev/sdk";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Home() {
 	const { contract } = useContract(
@@ -16,6 +16,8 @@ export default function Home() {
 	);
 	const { data: listings, isLoading: loadingListings } =
 		useActiveListings(contract);
+
+	const router = useRouter();
 
 	return (
 		<div className={styles.container}>
@@ -34,40 +36,41 @@ export default function Home() {
 				) : (
 					<div className={styles.listingWrapper}>
 						{listings?.map((listing) => (
-							<Link href={`/listing/${listing.id}`} className={styles.listing}>
-								<div key={listing.id}>
-									<div className={styles.mediaWrapper}>
-										<MediaRenderer
-											className={styles.media}
-											src={listing.asset.image}
-										/>
+							<div
+								key={listing.id}
+								className={styles.listing}
+								onClick={() => router.push(`/listing/${listing.id}`)}>
+								<div className={styles.mediaWrapper}>
+									<MediaRenderer
+										className={styles.media}
+										src={listing.asset.image}
+									/>
+								</div>
+
+								<div className={styles.infoWrapper}>
+									<div className={styles.info}>
+										<h2 className={styles.heading}>{listing.asset.name}</h2>
+										<p className={styles.description}>
+											{listing.asset.description}
+										</p>
 									</div>
 
-									<div className={styles.infoWrapper}>
-										<div className={styles.info}>
-											<h2 className={styles.heading}>{listing.asset.name}</h2>
-											<p className={styles.description}>
-												{listing.asset.description}
-											</p>
-										</div>
+									<p className={styles.priceWrapper}>
+										<span className={styles.price}>
+											{listing.buyoutCurrencyValuePerToken.displayValue}
+										</span>
+										{listing.buyoutCurrencyValuePerToken.symbol}
+									</p>
 
-										<p className={styles.priceWrapper}>
-											<span className={styles.price}>
-												{listing.buyoutCurrencyValuePerToken.displayValue}
-											</span>
-											{listing.buyoutCurrencyValuePerToken.symbol}
+									<div className={styles.listingTypeWrapper}>
+										<p className={styles.listingType}>
+											{listing.type === ListingType.Direct
+												? "Buy Now"
+												: "Bid Now"}
 										</p>
-
-										<div className={styles.listingTypeWrapper}>
-											<p className={styles.listingType}>
-												{listing.type === ListingType.Direct
-													? "Buy Now"
-													: "Bid Now"}
-											</p>
-										</div>
 									</div>
 								</div>
-							</Link>
+							</div>
 						))}
 					</div>
 				)}
