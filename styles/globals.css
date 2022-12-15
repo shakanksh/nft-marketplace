@@ -1,6 +1,7 @@
 :root {
 	--gray: #d4d2d5; /* black */
-	--space: #25283d; /* white */
+	/* --space: #25283d; */ /* white */
+	--space: #0e0e0e; /* white */
 	--lime: #c3f73a; /* black */
 	--pink: #d12335; /* white or black (maybe?) */
 }
@@ -28,6 +29,26 @@ h4,
 h5,
 h6 {
 	color: var(--lime);
+}
+
+button {
+	background-color: var(--lime);
+	color: var(--space);
+	border: none;
+	border-radius: 3px;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: all;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	border: 2px solid var(--lime);
+	font-size: 1rem;
+}
+
+button:hover {
+	background-color: var(--space);
+	color: var(--lime);
+	border: 2px solid var(--lime);
 }
 
 /* * {

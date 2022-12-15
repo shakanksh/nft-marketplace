@@ -24,17 +24,15 @@ function Header({}: Props) {
 						Connect Your Wallet
 					</button>
 				)}
-				<div className={styles.search}>
-					<input type='text' placeholder='Search' />
+				<div className={styles.logo}>
+					{/* <input type='text' placeholder='Search' /> */}
+					<a href='/'>
+						<h1>CrytoPunk</h1>
+					</a>
 				</div>
 				<div className={styles.menu}>
 					<a href='/create'>Create NFT</a>
 					<a href='/list'>List Item</a>
-					<IconContext.Provider
-						value={{ size: "1.5em", className: styles.icon }}>
-						<AiOutlineBell />
-						<AiOutlineShoppingCart />
-					</IconContext.Provider>
 				</div>
 			</section>
 			<div></div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Components/Header";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/List.module.css";
 import {
 	useAddress,
 	useContract,
@@ -124,9 +124,11 @@ function List({}: Props) {
 			<Header />
 			<main>
 				<h1>List an Item</h1>
-				<h2>Select an Item</h2>
+				{/* <h2>Select an Item</h2> */}
 				<hr />
-				<p>Below you'll find all the NFT's you own</p>
+				<p className={styles.infoText}>
+					Below you'll find all the NFT's you own
+				</p>
 
 				<div className={styles.listingWrapper}>
 					{ownedNFTs?.data?.map((nft) => (
@@ -157,15 +159,27 @@ function List({}: Props) {
 				</div>
 
 				{selectedNFT && (
-					<form onSubmit={handleListing}>
+					<form className={styles.formWrapper} onSubmit={handleListing}>
 						<div>
-							<div>
-								<label>Direct Listing</label>
-								<input type='radio' name='listingType' value='directListing' />
-								<label>Auction</label>
-								<input type='radio' name='listingType' value='auctionListing' />
-								<label>Price</label>
-								<input type='text' name='price' placeholder='0.05' />
+							<div className={styles.form}>
+								<label className={styles.label}>Direct Listing :</label>
+								<input
+									className={styles.radio}
+									type='radio'
+									name='listingType'
+									value='directListing'
+								/>
+								<label className={styles.label}>Auction :</label>
+								<input
+									className={styles.radio}
+									type='radio'
+									name='listingType'
+									value='auctionListing'
+								/>
+								<label className={styles.label}>Price :</label>
+								<div className={styles.inputField}>
+									<input type='text' name='price' placeholder='0.05' />
+								</div>
 							</div>
 							<button type='submit'>List Item</button>
 						</div>

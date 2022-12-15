@@ -34,16 +34,25 @@
 	filter: dropshadow(color=var(--lime), offx=2, offy=2);
 }
 
-.icon {
-	vertical-align: middle;
-	cursor: pointer;
-	padding: 0 0.8rem;
-	color: var(--gray);
+.logo {
+	/* vertical-align: middle; */
+	display: flex;
+	justify-content: center;
+	width: 50%;
 }
 
-.search {
+.logo a {
+	margin: 0 0.8rem;
 	vertical-align: middle;
-	width: 50%;
+	color: var(--lime);
+	font-weight: bold;
+	padding: 0 10px;
+	transition: all 0.2s ease-in-out;
+}
+
+.logo a:hover {
+	text-shadow: 2px 2px 10px var(--lime);
+	filter: dropshadow(color=var(--lime), offx=2, offy=2);
 }
 
 .search input {

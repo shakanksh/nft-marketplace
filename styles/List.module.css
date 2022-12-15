@@ -1,3 +1,11 @@
+.container {
+	padding: 1rem 1rem;
+}
+
+.infoText {
+	font-style: italic;
+}
+
 .listingWrapper {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -56,18 +64,6 @@
 	background-color: var(--space);
 }
 
-.listingTypeWrapper {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 5px;
-	padding: 0.5rem 1rem;
-	font-size: 0.85rem;
-	font-weight: 600;
-	color: var(--space);
-	background-color: var(--lime);
-}
-
 .mediaWrapper {
 	display: flex;
 	flex: 1;
@@ -76,4 +72,108 @@
 
 .media {
 	width: 13rem;
+}
+
+.infoWrapper {
+	padding-top: 0.25rem;
+}
+
+.heading {
+	font-weight: 600;
+}
+
+.description {
+	font-size: small;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.selected {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 2px solid var(--space);
+	align-items: center;
+	cursor: pointer;
+	padding: 1rem 1rem;
+	border-radius: 5px;
+	color: var(--space);
+	background-color: var(--lime);
+	user-select: none;
+}
+
+.selected h2 {
+	color: var(--space);
+}
+
+.formWrapper {
+	margin: 3rem 0;
+	width: 30%;
+}
+
+.form {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-gap: 0.7rem;
+	padding-bottom: 1rem;
+}
+
+.radio {
+	appearance: none;
+	background-color: transparent;
+	margin: 0;
+	font: inherit;
+	color: currentColor;
+	width: 1.15em;
+	height: 1.15em;
+	border: 0.15em solid currentColor;
+	border-radius: 50%;
+	display: grid;
+	place-content: center;
+	outline: none;
+}
+
+.radio::before {
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--lime);
+}
+
+.radio:checked::before {
+	transform: scale(1);
+}
+
+.label {
+	font-size: large;
+	font-weight: 600;
+	color: var(--lime);
+}
+
+.inputField {
+	vertical-align: middle;
+	width: 50%;
+}
+
+.inputField input {
+	/* background-color: var(--space); */
+	background-color: transparent;
+	color: var(--lime);
+	box-sizing: border-box;
+	border: 2.5px solid #fff;
+	width: 100%;
+	border-radius: 3px;
+	padding: 0.2rem 0.5rem;
+	font-weight: 600;
+}
+
+.inputField input:focus {
+	outline: none;
+	border: 2.5px solid var(--lime);
+	background-color: var(--space);
 }
