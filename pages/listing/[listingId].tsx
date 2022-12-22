@@ -143,61 +143,71 @@ function ListingPage() {
 	return (
 		<div>
 			<Head>
-				<title>{listing.asset.name}</title>
+				<title>{listing.asset.name} - NFT</title>
 				<meta name='description' content='Project Created By Shakanksh Sinha' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Header />
 
-			<main>
-				<div>
-					<MediaRenderer src={listing.asset.image} />
+			<main className={styles.main}>
+				<div className={styles.imageWrapper}>
+					<MediaRenderer className={styles.image} src={listing.asset.image} />
 				</div>
 
-				<div>
+				<section>
 					<h1>{listing.asset.name}</h1>
-					<p>{listing.asset.description}</p>
-					<p>{listing.sellerAddress}</p>
-				</div>
 
-				<div>
-					<p>Listing Type: </p>
-					<p>
-						{listing.type === ListingType.Direct
-							? "Direct Listing"
-							: "Auction Listing"}
-					</p>
-
-					<p>Buy Now Price: </p>
-					<p>
-						{listing.buyoutCurrencyValuePerToken.displayValue}{" "}
-						{listing.buyoutCurrencyValuePerToken.symbol}
-					</p>
-
-					<button onClick={buyNft}>Buy Now</button>
-				</div>
-
-				{listing.type === ListingType.Auction && (
-					<div>
-						<h1>Bid On This Auction: </h1>
-
-						<p>Current Minimum Bid:</p>
+					<div className={styles.details}>
+						<p className={styles.label}>Description: </p>
+						<p>{listing.asset.description}</p>
+						<p className={styles.label}>Seller: </p>
 						<p>
-							{minimumNextBid?.displayValue} {minimumNextBid?.symbol}
+							{listing.sellerAddress.slice(0, 7)}...
+							{listing.sellerAddress.slice(-7)}
 						</p>
 
-						<p>Time Remaining:</p>
-						<Countdown
-							date={Number(listing.endTimeInEpochSeconds.toString()) * 1000}
-						/>
-						<input
-							onChange={(e) => setBidAmount(e.target.value)}
-							type='text'
-							placeholder='Enter Value'
-						/>
-						<button onClick={createBid}>Place Bid</button>
+						<p className={styles.label}>Listing Type: </p>
+						<p>
+							{listing.type === ListingType.Direct
+								? "Direct Listing"
+								: "Auction Listing"}
+						</p>
+
+						<p className={styles.label}>Buy Now Price: </p>
+						<p>
+							{listing.buyoutCurrencyValuePerToken.displayValue}{" "}
+							{listing.buyoutCurrencyValuePerToken.symbol}
+						</p>
 					</div>
-				)}
+					<button onClick={buyNft}>Buy Now</button>
+
+					{listing.type === ListingType.Auction && (
+						<div>
+							<h1>Auction Details</h1>
+
+							<div className={styles.details}>
+								<p className={styles.label}>Current Minimum Bid:</p>
+								<p>
+									{minimumNextBid?.displayValue} {minimumNextBid?.symbol}
+								</p>
+
+								<p className={styles.label}>Time Remaining:</p>
+								<Countdown
+									date={Number(listing.endTimeInEpochSeconds.toString()) * 1000}
+								/>
+								<p className={styles.label}>Bid On This Auction: </p>
+								<div className={styles.inputField}>
+									<input
+										onChange={(e) => setBidAmount(e.target.value)}
+										type='text'
+										placeholder='Enter Value'
+									/>
+								</div>
+							</div>
+							<button onClick={createBid}>Place Bid</button>
+						</div>
+					)}
+				</section>
 			</main>
 			<Footer />
 		</div>

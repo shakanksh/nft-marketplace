@@ -1,0 +1,46 @@
+.main {
+	display: flex;
+	padding: 1rem 1rem;
+	/* justify-content: space-around;
+	align-items: center; */
+}
+
+.details {
+	display: grid;
+	/* grid-template-columns: repeat(2, minmax(0, 300px)); */
+	grid-template-columns: auto auto;
+	grid-gap: 0.5rem;
+}
+
+.image {
+	width: 70%;
+}
+
+.label {
+	font-size: large;
+	font-weight: 600;
+	color: var(--lime);
+}
+
+.inputField {
+	vertical-align: middle;
+	width: 50%;
+}
+
+.inputField input {
+	/* background-color: var(--space); */
+	background-color: transparent;
+	color: var(--lime);
+	box-sizing: border-box;
+	border: 2.5px solid #fff;
+	width: 100%;
+	border-radius: 3px;
+	padding: 0.2rem 0.5rem;
+	font-weight: 600;
+}
+
+.inputField input:focus {
+	outline: none;
+	border: 2.5px solid var(--lime);
+	background-color: var(--space);
+}
