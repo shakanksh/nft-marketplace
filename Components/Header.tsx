@@ -1,8 +1,5 @@
 import React from "react";
 import styles from "../styles/Components/Header.module.css";
-import { AiOutlineBell } from "@react-icons/all-files/ai/AiOutlineBell";
-import { AiOutlineShoppingCart } from "@react-icons/all-files/ai/AiOutlineShoppingCart";
-import { IconContext } from "@react-icons/all-files/lib";
 import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
 
 type Props = {};

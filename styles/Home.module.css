@@ -16,8 +16,9 @@
 }
 
 .heroImage {
-	height: 100vh;
-	margin-top: -9rem;
+	height: 90%;
+	/* width: 35rem; */
+	margin-top: -1rem;
 }
 
 .heroButton {

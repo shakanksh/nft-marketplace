@@ -5,7 +5,7 @@ function Footer() {
 	return (
 		<div className={styles.footer}>
 			<hr />
-			<p>Project Made By Shakanksh Sinha</p>
+			<p>Project Made By Shakanksh Sinha🔱</p>
 		</div>
 	);
 }

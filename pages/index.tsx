@@ -40,7 +40,7 @@ export default function Home() {
 						<button className={styles.heroButton}>Discover</button>
 					</a>
 				</div>
-				<img className={styles.heroImage} src='/nft-hero-image.png' alt='' />
+				<img className={styles.heroImage} src='/nft-hero.png' alt='' />
 			</section>
 			<main className={styles.main} id='nft'>
 				<h1 className={styles.heading}>Trending NFTs</h1>
