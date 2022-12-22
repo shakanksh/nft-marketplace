@@ -18,6 +18,7 @@ import {
 	NATIVE_TOKENS,
 	NATIVE_TOKEN_ADDRESS,
 } from "@thirdweb-dev/sdk";
+import Footer from "../Components/Footer";
 
 type Props = {};
 
@@ -186,6 +187,7 @@ function List({}: Props) {
 					</form>
 				)}
 			</main>
+			<Footer />
 		</div>
 	);
 }

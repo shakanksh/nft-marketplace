@@ -8,6 +8,7 @@ import {
 } from "@thirdweb-dev/react";
 import { ListingType } from "@thirdweb-dev/sdk";
 import { useRouter } from "next/router";
+import Footer from "../Components/Footer";
 
 export default function Home() {
 	const { contract } = useContract(
@@ -28,7 +29,21 @@ export default function Home() {
 			</Head>
 
 			<Header />
-			<main>
+			<section className={styles.hero}>
+				<div className={styles.heroWrapper}>
+					<h1 className={styles.heading}>
+						One-Stop Marketplace
+						<br /> For Collecting & Trading
+						<br /> Extraordinary NFTs
+					</h1>
+					<a href='#nft'>
+						<button className={styles.heroButton}>Discover</button>
+					</a>
+				</div>
+				<img className={styles.heroImage} src='/nft-hero-image.png' alt='' />
+			</section>
+			<main className={styles.main} id='nft'>
+				<h1 className={styles.heading}>Trending NFTs</h1>
 				{loadingListings ? (
 					<div className={styles.loadingWrapper}>
 						<p className={styles.loading}>Loading...</p>
@@ -75,6 +90,7 @@ export default function Home() {
 					</div>
 				)}
 			</main>
+			<Footer />
 		</div>
 	);
 }

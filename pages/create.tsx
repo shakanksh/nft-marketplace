@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import styles from "../styles/Create.module.css";
 import { useAddress, useContract } from "@thirdweb-dev/react";
 import Router from "next/router";
+import Footer from "../Components/Footer";
 
 type Props = {};
 
@@ -54,20 +55,26 @@ function Create({}: Props) {
 
 			<main className={styles.main}>
 				<h1 className={styles.heading}>
-					<span>Add an Item to the</span> Marketplace
+					<span>Mint an Item to the</span> Wallet
 				</h1>
 				<h2>
 					Item <span>Details</span>
 				</h2>
 				<p>
-					By adding an Item to the Marketplace, you're essentially Minting an
-					NFT of the Item into your Wallet which we can then List for Sale or
-					Auction
+					By adding an Item to the Wallet, you're essentially Minting an NFT of
+					the Item into your Wallet which we can then List for Sale or Auction
 				</p>
 				<hr />
 
 				<div className={styles.formWrapper}>
-					<img src={preview} alt='' />
+					<img
+						src={
+							preview ||
+							"https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg"
+						}
+						alt=''
+						className={styles.preview}
+					/>
 					<form onSubmit={mintNft} className={styles.form}>
 						<label>Name of the Item</label>
 						<input type='text' name='name' id='name' />
@@ -83,10 +90,13 @@ function Create({}: Props) {
 								}
 							}}
 						/>
-						<button type='submit'>Add/Mint Item</button>
+						<button className={styles.mintButton} type='submit'>
+							Add/Mint Item
+						</button>
 					</form>
 				</div>
 			</main>
+			<Footer />
 		</div>
 	);
 }

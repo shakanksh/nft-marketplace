@@ -15,6 +15,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import Countdown from "react-countdown";
+import Footer from "../../Components/Footer";
 import Header from "../../Components/Header";
 import styles from "../../styles/ListingId.module.css";
 
@@ -198,6 +199,7 @@ function ListingPage() {
 					</div>
 				)}
 			</main>
+			<Footer />
 		</div>
 	);
 }
